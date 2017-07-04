@@ -1,0 +1,13 @@
+<p>Add a place</p>
+<form action="/index" method="post">
+  <div class="input-field">
+    <input type="text" name="title" value="title">
+  </div>
+  <button type="submit" name="button" class="waves-effect waves-light btn">Add place</button>
+</form>
+
+<ul>
+  <% @places.each().to_a do |place| %>
+  <li><%= place.title() %></li>
+  <% end %>
+</ul>

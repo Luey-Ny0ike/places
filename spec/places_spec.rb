@@ -11,7 +11,7 @@ describe(Place) do
 
   describe('.all_places')do
     it("is empty at first")do
-      expect(Place.all()).to(eq([]))
+      expect(Place.all_places()).to(eq([]))
     end
   end
 end

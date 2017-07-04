@@ -18,8 +18,8 @@ describe(Place) do
   describe('#save') do
     it('saves places') do
       test_track = Place.new('Mombasa city')
-      test_track.save()
-      expect(Place.all_places()).to(eq([test_track]))
+      test_track.save
+      expect(Place.all_places).to(eq([test_track]))
     end
   end
 end

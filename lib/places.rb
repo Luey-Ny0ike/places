@@ -1,4 +1,5 @@
 class Place
+  @@places = []
   define_method(:initialize) do |title|
     @title = title
   end
@@ -7,7 +8,11 @@ class Place
     @title
   end
 
-  define_singleton_method(:all_places)do
+  define_singleton_method(:all_places) do
     []
+  end
+
+  define_method(:save) do
+    @@places.push(self)
   end
 end

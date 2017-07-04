@@ -8,4 +8,10 @@ describe(Place) do
       expect(test_track.place_title).to(eq('Mombasa city'))
     end
   end
+
+  describe('.all_places')do
+    it("is empty at first")do
+      expect(Place.all()).to(eq([]))
+    end
+  end
 end

@@ -9,9 +9,17 @@ describe(Place) do
     end
   end
 
-  describe('.all_places')do
-    it("is empty at first")do
-      expect(Place.all_places()).to(eq([]))
+  describe('.all_places') do
+    it('is empty at first') do
+      expect(Place.all_places).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('saves places') do
+      test_track = Place.new('Mombasa city')
+      test_track.save()
+      expect(Place.all_places()).to(eq([test_track]))
     end
   end
 end

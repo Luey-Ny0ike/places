@@ -2,6 +2,9 @@ require('rspec')
 require('places')
 
 describe(Place) do
+  before do
+    Place.clear
+  end
   describe('#place_title') do
     it("lets you add a title to a place you've been") do
       test_track = Place.new('Mombasa city')
@@ -20,6 +23,14 @@ describe(Place) do
       test_track = Place.new('Mombasa city')
       test_track.save
       expect(Place.all_places).to(eq([test_track]))
+    end
+  end
+
+  describe('.clear') do
+    it('clears all data from the array') do
+      Place.new('Mombasa city').save
+      Place.clear
+      expect(Place.all_places).to(eq([]))
     end
   end
 end
